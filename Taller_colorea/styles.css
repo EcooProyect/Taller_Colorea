@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    overflow-x: hidden;
+
+    background: linear-gradient(135deg, #020617, #0f172a, #1e1b4b);
+}
+
+/* Fondo binario más suave */
+body::before {
+    content: "010101010101010101010101010101010101010101010101";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    color: rgba(168, 85, 247, 0.07);
+    font-size: 18px;
+    white-space: pre;
+    animation: scroll 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scroll {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #a855f7;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+/* CONEJO */
+.bunny-container {
+    position: relative;
+    margin-top: 50px;
+}
+
+/* Plataforma */
+.platform {
+    width: 260px;
+    height: 20px;
+    background: linear-gradient(90deg, #7c3aed, #a855f7);
+    border-radius: 50px;
+    margin: 0 auto;
+    filter: blur(1px);
+}
+
+/* Sombra */
+.shadow {
+    width: 220px;
+    height: 25px;
+    background: radial-gradient(circle, rgba(0,0,0,0.6), transparent);
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+/* Imagen */
+.bunny-container img {
+    width: 280px;
+    display: block;
+    margin: 0 auto;
+    transition: 0.4s;
+    filter: drop-shadow(0 0 15px #7c3aed);
+}
+
+.bunny-container img:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* BOTÓN */
+button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #7c3aed, #a855f7);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* SECCIONES */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(30, 30, 60, 0.6);
+    padding: 25px;
+    border-radius: 15px;
+    width: 220px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #7c3aed, #4c1d95);
+}
+
+/* FOOTER */
+footer {
+    background: #020617;
+    padding: 20px;
+}
