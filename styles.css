@@ -1,12 +1,13 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    color: white;
-    background: black;
+    color: #0f172a;
     overflow-x: hidden;
+
+    background: linear-gradient(135deg, #e0f2fe, #ede9fe, #f0f9ff);
 }
 
-/* Fondo binario animado */
+/* Fondo tecnológico suave */
 body::before {
     content: "010101010101010101010101010101";
     position: fixed;
@@ -14,10 +15,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 200%;
-    color: rgba(124, 58, 237, 0.1);
-    font-size: 20px;
+    color: rgba(255, 255, 255, 0.12);
+    font-size: 18px;
     white-space: pre;
-    animation: scroll 10s linear infinite;
+    animation: scroll 25s linear infinite;
+    pointer-events: none;
 }
 
 @keyframes scroll {
@@ -25,11 +27,14 @@ body::before {
     to { transform: translateY(-50%); }
 }
 
+/* HEADER */
 header {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background: rgba(20, 20, 40, 0.9);
+    background: rgba(15, 23, 42, 0.6);
+    color: white;
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
 }
@@ -38,40 +43,73 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     color: white;
+    font-weight: 500;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #a855f7;
+    color: #7c3aed;
 }
 
+/* HERO */
 .hero {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     padding: 80px 20px;
-}
-
-.hero img {
-    width: 320px;
-    transition: transform 0.5s;
-}
-
-.hero img:hover {
-    transform: scale(1.1) rotate(3deg);
+    text-align: center;
 }
 
 .hero-text {
-    max-width: 400px;
+    max-width: 500px;
 }
 
+/* CONEJO */
+.bunny-container {
+    position: relative;
+    margin-top: 50px;
+}
+
+/* Plataforma futurista */
+.platform {
+    width: 260px;
+    height: 25px;
+    background: linear-gradient(90deg, #22d3ee, #a855f7);
+    border-radius: 50px;
+    margin: 0 auto;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+}
+
+/* Luz debajo */
+.shadow {
+    width: 220px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(34,211,238,0.4), transparent);
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+/* Imagen */
+.bunny-container img {
+    width: 280px;
+    display: block;
+    margin: 0 auto;
+    transition: 0.4s;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
+.bunny-container img:hover {
+    transform: translateY(-12px) scale(1.05);
+}
+
+/* BOTÓN */
 button {
     padding: 12px 25px;
-    background: linear-gradient(45deg, #7c3aed, #a855f7);
+    background: linear-gradient(45deg, #22d3ee, #7c3aed);
     border: none;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
@@ -79,31 +117,40 @@ button:hover {
     transform: scale(1.1);
 }
 
+/* SECCIONES */
 section {
     padding: 60px 20px;
     text-align: center;
 }
 
+/* CARDS */
 .features {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 .card {
-    background: rgba(30, 30, 60, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
+    
+    background: rgba(255, 255, 255, 0.85);
+    color: #0f172a;
+    padding: 25px;
+    border-radius: 15px;
+    width: 220px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    background: #7c3aed;
+    background: linear-gradient(135deg, #6366f1, #7c3aed);
+    color: white;
 }
 
+/* FOOTER */
 footer {
-    background: #111;
+    background: #e0f2fe;
     padding: 20px;
 }
